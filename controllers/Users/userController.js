@@ -209,7 +209,7 @@ const userPasswordReset = asyncHandler(async (req, res) => {
 
     //send a token to the email and a verification button
 
-    const resetURL = `If you want to reset your password click here: <a href="http://localhost:3000/forgot-passsword-reset/${resetPasswordToken}">Reset Password</a>`
+    const resetURL = `If you want to reset your password click here: <a href="https://trend-spot-backend.vercel.app/forgot-passsword-reset/${resetPasswordToken}">Reset Password</a>`
 
     const msg = {
       to: email,
@@ -277,7 +277,7 @@ const verifyAccount = asyncHandler(async (req, res) => {
       const verificationToken = await user.createAccountVerificationToken()
       await user.save()
 
-      const verifyURL = `If you want to verify your account click here: <a href="http://localhost:5173/verify-account/${verificationToken}">Verify Account</a>`
+      const verifyURL = `If you want to verify your account click here: <a href="https://trend-spot-backend.vercel.app/verify-account/${verificationToken}">Verify Account</a>`
 
       const msg = {
         to: user?.email,
